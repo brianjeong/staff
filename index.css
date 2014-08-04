@@ -1,0 +1,29 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+#status_pane div {
+	height: 2em;
+	line-height: 2em;
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	float: left;
+	width: 14em;
+}
+#status_pane div:not(#id_chk) {color:#082e81;}
+#id_chk {color:#ff3204;}
+
+#welcome, #id_chk, #msg {
+	width: 14em;
+	background-color: rgba(89,140,216,0.51);
+}
+#id_chk {color:rgba(212,17,37,0.89);}
+#msg {color:rgba(183,10,217,0.89);}
+#welcome:hover, #id_chk:hover, #msg:hover {background-color: rgba(89,141,217,0.77);}
+
+#my_account {background-color: rgba(36,158,158,0.57);}
+#logout {background-color: rgba(0,10,0,0.31);}
+#my_account:hover, #logout:hover {background-color:rgba(230,188,53,0.77);}
