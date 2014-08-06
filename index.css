@@ -20,6 +20,11 @@ html, body {
 	width: 14em;
 }
 
+#module_pane div {
+	display:block;
+	clear:both;
+}
+
 #status_pane div:not(#id_chk) {
 	color:#082e81;
 }
