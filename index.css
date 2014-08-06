@@ -9,8 +9,7 @@ html, body {
 	clear: both;
 }
 
-#status_pane div,
-#module_pane div {
+#status_pane div {
 	height: 2em;
 	line-height: 2em;
 	text-align: center;
@@ -20,13 +19,26 @@ html, body {
 	width: 14em;
 }
 
-#module_pane div {
-	display:block;
-	clear:both;
-}
-
 #status_pane div:not(#id_chk) {
 	color:#082e81;
+}
+
+#module_pane div {
+	height: 2em;
+	line-height: 2em;
+	text-align: center;
+	font-size: 1em;
+	font-weight: bold;
+	float: left;
+	width: 14em;
+
+	display:block;
+	clear:both;
+	background-color: rgba(68,165,206,0.81);
+}
+
+#module_pane div:hover {
+	background-color:  rgba(32,145,192,0.88);
 }
 
 #id_chk {

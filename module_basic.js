@@ -1,3 +1,5 @@
+var spinner = "<img src='imgs/spinner.gif' border='0'>";
+
 $(
 	function(){
 
@@ -21,15 +23,17 @@ $(
 		
 		$('#test_module').click(
 			function(){
-				$.post (
-					"qry.php",
-//					"testpost.php",
-					{"qry":"select id,first_name,last_name,school_email from staff"},
-					function (rslt){
+				$.ajax ({
+					beforeSend: function() {
+						$('#content_pane').html(spinner);
+					},
+					url: "qry.php",
+					type:"POST",
+					data: {"qry":"select id,first_name,last_name,school_email from staff"},
+					success: function (rslt){
 						$('#content_pane').html(rslt);
 					}
-				);
-				
+				});
 			}
 		);
 		
