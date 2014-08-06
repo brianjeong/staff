@@ -4,7 +4,7 @@ html, body {
 	font-size: 16px;
 }
 
-#status_pane {
+#status_pane, #module_pane {
 	display: block;
 	clear: both;
 }
