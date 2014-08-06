@@ -4,7 +4,7 @@ html, body {
 	font-size: 16px;
 }
 
-#status_pane div {
+#status_pane div, #module_pane div {
 	height: 2em;
 	line-height: 2em;
 	text-align: center;
@@ -13,6 +13,7 @@ html, body {
 	float: left;
 	width: 14em;
 }
+
 #status_pane div:not(#id_chk) {color:#082e81;}
 #id_chk {color:#ff3204;}
 

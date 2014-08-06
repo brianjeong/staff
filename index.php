@@ -23,22 +23,17 @@ if(@$_SESSION['auth'] != "staff"){
 			<? echo $_SESSION['id_chk']; ?>
 		</div>
 		<div id='msg'>
-			<? if(isset($_SESSION['msg'])){
-				$msg=$_SESSION['msg'];
-				echo "$msg";
-				}
-				$_SESSION['msg']='';
+			<? if(isset($_SESSION['msg'])){echo $_SESSION['msg'];}
+				unset($_SESSION['msg']);
 			?>
 		</div>		
-		<div id='my_account'>
-			My Account
-		</div>
-		<div id='logout'>
-			Logout
-		</div>
+		<div id='my_account'>My Account</div>
+		<div id='logout'>Logout</div>
 	</div>
 	
 	<div id='module_pane'>
+		<div id='test_module'>Test Module</div>
+		<div id='test_module2'>Test Module2</div>
 	</div>
 		
 	<div id='extra_pane'>

@@ -14,7 +14,7 @@ if(!isset($_SESSION["back"])){
 }
 
 if (@$_POST['login_btn']=="Login"){
-	include("dac.inc.php");		// db access info
+	require_once("dac.inc.php");		// db access info
 	$cnct = mysqli_connect($host,$dbusr,$dbpw,$dbname);
 	
 	$id_in = $_POST['user_id'];
