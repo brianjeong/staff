@@ -32,6 +32,7 @@ $(
 					data: {"qry":"select id,first_name,last_name,school_email from staff"},
 					success: function (rslt){
 						$('#content_pane').html(rslt);
+						$('#content_pane tr:even').css("background","#dddddd");
 					}
 				});
 			}
