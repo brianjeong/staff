@@ -24,6 +24,9 @@ $row = mysqli_fetch_assoc($rslt);
 <head>
 </head>
 <body>
+	<div id="id_pic">
+		<img src="pfpic.php" />
+	</div>
 	<div>
 		<form method="post" action="info_update.php">
 			<input type="text" name="first_name" value = "<?echo $row['first_name']; ?>" placeholder="First Name" />
