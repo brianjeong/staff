@@ -7,7 +7,7 @@ if (empty($_POST['qry']))
 	exit();
 */
 
-require_once("dac.inc.php");		// db access info
+require_once("inc/dac.inc.php");		// db access info
 $cnct = mysqli_connect($host,$dbusr,$dbpw,$dbname);
 mysqli_query($cnct,"SET NAMES 'UTF8'");
 

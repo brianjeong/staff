@@ -14,13 +14,13 @@ if(!isset($_SESSION["back"])){
 }
 
 if (@$_POST['login_btn']=="Login"){
-	require_once("dac.inc.php");		// db access info
+	require_once("inc/dac.inc.php");		// db access info
 	$cnct = mysqli_connect($host,$dbusr,$dbpw,$dbname);
 	
 	$id_in = $_POST['user_id'];
 	$pw_in = $_POST['user_pw'];
 	$tbl='staff';
-	$qry = "SELECT id,first_name,expired FROM $tbl WHERE id='$id_in' AND pw='$pw_in'";
+	$qry = "SELECT id,first_name,expired,pic_link FROM $tbl WHERE id='$id_in' AND pw='$pw_in'";
 	$rslt = mysqli_query($cnct,$qry);
 	$num = mysqli_num_rows($rslt);
 	
@@ -29,6 +29,7 @@ if (@$_POST['login_btn']=="Login"){
 				
 		$_SESSION['auth']="staff";
 		$_SESSION['user_id']=$id_in;
+		$_SESSION['pic_link']=$row['pic_link'];
 		$_SESSION['user_pw']=$pw_in;
 		$_SESSION['user_name']=$row['first_name'];
 		$_SESSION['id_chk']=($row['expired']==1?"Expired ID":"");
