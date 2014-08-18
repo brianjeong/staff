@@ -41,6 +41,7 @@ if(@$_SESSION['auth'] != "staff"){
 		<div id='test_module7'>Test Module7</div>
 		<div id='test_module8'>Test Module8</div>
 		<div id='test_module9'>Test Module9</div>
+		<div id='test_module10'>Test Module10</div>
 	</div>
 		
 	<div id='extra_pane'>

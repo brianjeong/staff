@@ -185,6 +185,44 @@ $(
 			}
 		);
 		
+		$('#test_module10').click(
+			function(){
+			
+				$('#content_pane').html(
+					"<div><form id='srch_usr_form' method='post'><input type='text' id='srch_usr' autofocus/><input type='submit' id='srch_btn' value='Search Staff'/></form></div><div id='tbl_container'></div>"
+				);
+				
+				$('#srch_usr_form').submit(
+					function (e) {
+						e.preventDefault();
+						var srch_str = $('#srch_usr').val();
+						var english = /^[A-Za-z]*$/;
+						var qry ="";
+						
+						// Change Code of this 'LIKE Search' to 'Match Against FULLTEXT Search' query when MySQL >= 5.6 InnoDB Engine
+						if (english.test(srch_str)){
+							qry = "select id,first_name,last_name,korean_name,ext,school_email,cell_phone from staff where first_name like '%"+srch_str+"%' or last_name like '%"+srch_str+"%';";
+						}else{
+							qry = "select id,first_name,last_name,korean_name,ext,school_email,cell_phone from staff where korean_name like '%"+srch_str+"%';";
+						}
+						
+						$.ajax ({
+							beforeSend: function() {
+								$('#tbl_container').html(spinner);
+							},
+							url: "qry.php",
+							type:"POST",
+							data: {"qry":qry},
+							success: function (rslt){
+								$('#tbl_container').html(rslt);
+								$('#tbl_container tr:even').css("background","#dddddd");
+							}
+						});
+					}
+				);
+			}
+		);
+		
 		
 	}
 );
